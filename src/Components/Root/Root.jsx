@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 
 const Root = () => {
     return (
-        <div>
+        <div className="container mx-auto font-[Work-Sans]">
             <Header/>
             <Outlet/>
             <Footer/>
