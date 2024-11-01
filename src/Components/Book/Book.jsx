@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
 
-    const {bookId, bookName, author, image, rating, publisher, tags, category } = book
+    const { bookId, bookName, author, image, rating, publisher, tags, category } = book
 
     return (
 
@@ -19,7 +19,7 @@ const Book = ({ book }) => {
                     <div className="flex justify-center gap-4">
                         {tags.map((tag, i) => <button key={i} className="btn btn-sm">{tag}</button>)}
                     </div>
-                    <h2 className="card-title mt-5">{bookName}</h2>
+                    <h2 className="card-title mt-5 text-2xl">{bookName}</h2>
                     <p>{publisher}</p>
                     <div className="divider"></div>
                     <div className="flex justify-between">
