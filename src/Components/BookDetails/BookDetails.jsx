@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { addToStoredReadList } from "../../utilities/addToDb";
 
 
 const BookDetails = () => {
@@ -9,6 +10,10 @@ const BookDetails = () => {
 
     const selectedBook = data.find((book) => book.bookId === id);
     const { bookName, bookId: currentBookId, image, review, totalPages, publisher, yearOfPublishing, author, tags } = selectedBook
+
+    const handleMarkAsRead = (id) => {
+        addToStoredReadList(id);
+    }
 
     return (
         <div className="hero h-[700px] mb-5">
@@ -34,7 +39,7 @@ const BookDetails = () => {
                         <p><strong>Number of pages</strong> : {totalPages}</p>
                     </div>
                     <div className="mt-5">
-                        <button className="btn btn-outline mr-4">Read</button>
+                        <button className="btn btn-outline mr-4" onClick={() => handleMarkAsRead(currentBookId)}>Mark As Read</button>
                         <button className="btn btn-info">WishList</button>
                     </div>
                 </div>
